@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Boda - Marco & Ángeles</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --color-principal: #d4a373; 
+            --color-fondo: #fffbf0; 
+            --color-texto: #5a5a5a; 
+            --rosa-palido: #f9f1f3; 
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--color-fondo);
+            color: var(--color-texto);
+            text-align: center;
+        }
+
+        h1, h2, .cursive {
+            font-family: 'Great Vibes', cursive;
+            font-weight: normal;
+            color: var(--color-principal);
+        }
+        h2 { font-size: 2.5rem; margin-bottom: 10px;}
+
+        section { padding: 60px 20px; }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white !important; 
+        }
+
+        .hero h1 { font-size: 4.5rem; margin: 15px 0; color: white !important; }
+        .hero p { letter-spacing: 4px; text-transform: uppercase; font-weight: 300; font-size: 0.9rem; }
+
+        .btn {
+            background-color: var(--color-principal);
+            color: white;
+            padding: 15px 35px;
+            text-decoration: none;
+            border-radius: 50px;
+            display: inline-block;
+            margin-top: 25px;
+            transition: 0.3s;
+            font-weight: bold;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover { background-color: #bc8a5f; transform: translateY(-2px); }
+
+        .confirmation-options {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .option-item input[type="radio"] {
+            accent-color: var(--color-principal);
+            width: 20px;
+            height: 20px;
+        }
+
+        .countdown-container { background-color: var(--color-principal); color: white; padding: 40px 0; }
+        .timer { display: flex; justify-content: center; gap: 25px; }
+        .timer div { display: flex; flex-direction: column; align-items: center; }
+        .timer span { font-size: 2.5rem; font-weight: bold; }
+
+        .timeline { max-width: 600px; margin: 40px auto 0; border-left: 2px solid var(--color-principal); padding-left: 30px; text-align: left; }
+        .event { margin-bottom: 40px; position: relative; }
+        .event::before { content: '❤'; position: absolute; left: -42px; top: 0px; background: var(--color-fondo); color: var(--color-principal); padding: 5px; border-radius: 50%; border: 1px solid var(--color-principal); }
+        .event strong { color: var(--color-principal); display: block; margin-bottom: 5px; font-size: 1.1rem;}
+
+        .divider { width: 60%; border: 0; border-top: 1px solid #e0e0e0; margin: 20px auto; }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <p>NUESTRA BODA</p>
+        <h1>Marco Antonio & Ángeles Ramírez</h1>
+        <p>31 . ENERO . 2026</p>
+    </div>
+
+    <section class="bible-verse">
+        <p class="cursive" style="font-size: 2.2rem; margin-bottom: 10px;">
+            "El que halla esposa halla el bien, y alcanza la benevolencia de Jehová."
+        </p>
+        <p style="letter-spacing: 3px; font-size: 0.9rem; font-weight: bold;">PROVERBIOS 18:22</p>
+    </section>
+
+    <section class="countdown-container">
+        <h2 style="color: white; margin-top: 0;">Solo faltan...</h2>
+        <div class="timer" id="timer">
+            <div><span id="days">00</span>DÍAS</div>
+            <div><span id="hours">00</span>HORAS</div>
+            <div><span id="minutes">00</span>MINS</div>
+            <div><span id="seconds">00</span>SEGS</div>
+        </div>
+    </section>
+
+    <section>
+        <p class="cursive" style="font-size: 2rem;">Con la bendición de nuestros padres...</p>
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px;">
+            <div>
+                <h4 style="color: var(--color-principal);">Padres de la Novia</h4>
+                <p>Sr. Jesús Ramírez Ramos <br>Sra. Guadalupe García Martínez</p>
+            </div>
+            <div>
+                <h4 style="color: var(--color-principal);">Padres del Novio</h4>
+                <p>Sr. Agustín Pantoja Uriostegui<br>Sra. Adolfina Uriostegui</p>
+            </div>
+        </div>
+
+        <div style="margin-top: 40px;">
+            <p class="cursive" style="font-size: 1.8rem;">Nuestros Padrinos de Anillos</p>
+            <p style="font-size: 1.1rem; margin-top: 10px;">
+                <strong>Familia Castrejón Jiménez</strong>
+            </p>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <section>
+        <h2>Itinerario del Gran Día</h2>
+        <div class="timeline">
+            <div class="event">
+                <strong>16:00 PM | Ceremonia Religiosa</strong>
+                <p>Iglesia rescatando y formando familias.</p>
+            </div>
+            <div class="event">
+                <strong>20:00 PM | Recepción</strong>
+                <p>Salón Agua Luvi, Acapulco.</p>
+            </div>
+            <div class="event">
+                <strong>21:30 PM | Cena y Brindis</strong>
+                <p>Primer baile como esposos y cena formal.</p>
+            </div>
+            <div class="event">
+                <strong>23:00 PM | ¡Fiesta!</strong>
+                <p>Música, baile y celebración hasta el amanecer.</p>
+            </div>
+        </div>
+    </section>
+
+    <section style="background-color: var(--rosa-palido);">
+        <h2>Ubicación y Mapa</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 5px;"><strong>Sobre la purificadora luvi</strong></p>
+        <p>Maracas 5, Int. A, Fracc. Marroquín<br>Acapulco de Juárez, Gro.</p>
+        <a href="https://www.google.com/maps/place/Agua+Luvi/@16.866091,-99.8790874,3a,75y,177.25h,81.29t/data=!3m7!1e1!3m5!1skswtxjEoYDjggwfLwUM1tQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.712290654985878%26panoid%3DkswtxjEoYDjggwfLwUM1tQ%26yaw%3D177.25132467471616!7i16384!8i8192!4m7!3m6!1s0x85ca57f4d2f178f5:0x9b0efa58fea2db2e!8m2!3d16.8658299!4d-99.8793499!10e5!16s%2Fg%2F1tcvjf5z?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn">VER EN GOOGLE MAPS</a>
+    </section>
+
+    <section>
+        <h2>Sugerencia de Regalos</h2>
+        <br>
+        <i class="fas fa-envelope-open-text" style="font-size: 3rem; color: var(--color-principal);"></i>
+        <p class="cursive" style="font-size: 1.8rem; margin: 20px 0;">Lluvia de sobres</p>
+        <p style="max-width: 600px; margin: auto;">Su presencia es nuestro mayor regalo. Si desean tener un detalle con nosotros, agradeceríamos su obsequio en efectivo el día del evento.</p>
+    </section>
+
+    <section style="background-color: #2a2a2a; color: white;">
+        <h2>Código de Vestimenta</h2>
+        <p style="font-size: 1.3rem; letter-spacing: 2px; margin-top: 20px;">FORMAL CASUAL</p>
+        <p style="margin-top: 20px; font-size: 0.9rem;"><i class="fas fa-hand-sparkles"></i> Por favor, reserven el color Beige exclusivamente para la novia.</p>
+    </section>
+
+    <section style="background: linear-gradient(var(--color-fondo), white);">
+        <h2>¿Nos acompañas a celebrar?</h2>
+        <p>Es muy importante para nosotros contar con tu presencia.</p>
+        <p>Por favor, confirma tu asistencia antes del 15 de Enero de 2026.</p>
+        
+        <div class="confirmation-options">
+            <label class="option-item">
+                <input type="radio" name="asistencia" value="SI" checked> ¡Sí, allí estaré!
+            </label>
+            <label class="option-item">
+                <input type="radio" name="asistencia" value="NO"> No podré asistir
+            </label>
+        </div>
+
+        <button onclick="enviarWhatsApp()" class="btn" style="background-color: #25d366;">
+            <i class="fab fa-whatsapp"></i> ENVIAR CONFIRMACIÓN
+        </button>
+    </section>
+
+    <footer style="padding: 30px; background-color: var(--color-principal); color: white; font-size: 0.9rem;">
+        <p class="cursive" style="font-size: 1.5rem; margin-bottom: 10px;">Marco Antonio & Ángeles</p>
+        <p>¡Gracias por ser parte de nuestra historia!</p>
+    </footer>
+
+    <script>
+        const weddingDate = new Date("Jan 31, 2026 16:00:00").getTime();
+        setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+        }, 1000);
+
+        function enviarWhatsApp() {
+            const radioButtons = document.getElementsByName("asistencia");
+            let seleccion = "";
+            for (const rb of radioButtons) {
+                if (rb.checked) {
+                    seleccion = rb.value;
+                    break;
+                }
+            }
+            let mensaje = (seleccion === "SI") 
+                ? "Estimados Marco y Ángeles, es un placer confirmar mi asistencia a su boda. ¡Allí estaré! Mi nombre es: " 
+                : "Estimados Marco y Ángeles, muchas gracias por la invitación. Lamentablemente no podré asistir, pero les deseo lo mejor. Saludos de: ";
+            
+            window.open("https://wa.me/527444563528?text=" + encodeURIComponent(mensaje), "_blank");
+        }
+    </script>
+</body>
+</html>
