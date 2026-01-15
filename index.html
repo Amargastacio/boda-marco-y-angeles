@@ -32,6 +32,7 @@
 
         section { padding: 60px 20px; }
 
+        /* --- ESTILO DEL ENCABEZADO (HERO) --- */
         .hero {
             height: 100vh;
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
@@ -45,9 +46,31 @@
             color: white !important; 
         }
 
-        .hero h1 { font-size: 4.5rem; margin: 15px 0; color: white !important; }
+        .nombres-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; 
+            margin: 20px 0;
+        }
+
+        .hero h1 { 
+            font-size: 4rem; 
+            margin: 0; 
+            color: white !important; 
+            line-height: 1.1;
+        }
+
+        .ampersand {
+            font-family: 'Great Vibes', cursive;
+            font-size: 3rem;
+            color: white;
+        }
+
         .hero p { letter-spacing: 4px; text-transform: uppercase; font-weight: 300; font-size: 0.9rem; }
 
+        /* --- BOTONES Y OTROS --- */
         .btn {
             background-color: var(--color-principal);
             color: white;
@@ -98,13 +121,27 @@
         .event strong { color: var(--color-principal); display: block; margin-bottom: 5px; font-size: 1.1rem;}
 
         .divider { width: 60%; border: 0; border-top: 1px solid #e0e0e0; margin: 20px auto; }
+
+        /* REGLA ESPECIAL PARA CELULARES */
+        @media (max-width: 600px) {
+            .nombres-container {
+                flex-direction: column; 
+                gap: 5px;
+            }
+            .hero h1 { font-size: 3.2rem; }
+            .ampersand { font-size: 2.5rem; }
+        }
     </style>
 </head>
 <body>
 
     <div class="hero">
         <p>NUESTRA BODA</p>
-        <h1>Marco Antonio & Ángeles Ramírez</h1>
+        <div class="nombres-container">
+            <h1>Marco Antonio</h1>
+            <span class="ampersand">&</span>
+            <h1>Ángeles Ramírez</h1>
+        </div>
         <p>31 . ENERO . 2026</p>
     </div>
 
@@ -130,11 +167,11 @@
         <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin-top: 30px;">
             <div>
                 <h4 style="color: var(--color-principal);">Padres de la Novia</h4>
-                <p>Sr. Jesús Ramírez Ramos <br>Sra. Guadalupe García Martínez</p>
+                <p>Sr. Jesús Ramírez Ramos <br>Sra. Guadalupe García Martínez <span style="font-size: 0.8rem; vertical-align: middle;">†</span></p>
             </div>
             <div>
                 <h4 style="color: var(--color-principal);">Padres del Novio</h4>
-                <p>Sr. Agustín Pantoja Uriostegui<br>Sra. Adolfina Uriostegui</p>
+                <p>Sr. Agustín Pantoja Castro <span style="font-size: 0.8rem; vertical-align: middle;">†</span><br>Sra. Adolfina Uriostegui</p>
             </div>
         </div>
 
@@ -156,15 +193,15 @@
                 <p>Iglesia rescatando y formando familias.</p>
             </div>
             <div class="event">
-                <strong>20:00 PM | Recepción</strong>
+                <strong>Recepción</strong>
                 <p>Salón Agua Luvi, Acapulco.</p>
             </div>
             <div class="event">
-                <strong>21:30 PM | Cena y Brindis</strong>
+                <strong>Cena y Brindis</strong>
                 <p>Primer baile como esposos y cena formal.</p>
             </div>
             <div class="event">
-                <strong>23:00 PM | ¡Fiesta!</strong>
+                <strong>¡Fiesta!</strong>
                 <p>Música, baile y celebración hasta el amanecer.</p>
             </div>
         </div>
@@ -174,15 +211,7 @@
         <h2>Ubicación y Mapa</h2>
         <p style="font-size: 1.1rem; margin-bottom: 5px;"><strong>Sobre la purificadora luvi</strong></p>
         <p>Maracas 5, Int. A, Fracc. Marroquín<br>Acapulco de Juárez, Gro.</p>
-        <a href="https://www.google.com/maps/place/Agua+Luvi/@16.866091,-99.8790874,3a,75y,177.25h,81.29t/data=!3m7!1e1!3m5!1skswtxjEoYDjggwfLwUM1tQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D8.712290654985878%26panoid%3DkswtxjEoYDjggwfLwUM1tQ%26yaw%3D177.25132467471616!7i16384!8i8192!4m7!3m6!1s0x85ca57f4d2f178f5:0x9b0efa58fea2db2e!8m2!3d16.8658299!4d-99.8793499!10e5!16s%2Fg%2F1tcvjf5z?entry=ttu&g_ep=EgoyMDI2MDEwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn">VER EN GOOGLE MAPS</a>
-    </section>
-
-    <section>
-        <h2>Sugerencia de Regalos</h2>
-        <br>
-        <i class="fas fa-envelope-open-text" style="font-size: 3rem; color: var(--color-principal);"></i>
-        <p class="cursive" style="font-size: 1.8rem; margin: 20px 0;">Lluvia de sobres</p>
-        <p style="max-width: 600px; margin: auto;">Su presencia es nuestro mayor regalo. Si desean tener un detalle con nosotros, agradeceríamos su obsequio en efectivo el día del evento.</p>
+        <a href="https://www.google.com/maps/place/Agua+Luvi/@16.866091,-99.8790874,3a,75y,161.79h,89.77t/data=!3m7!1e1!3m5!1skswtxjEoYDjggwfLwUM1tQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D0.23481425336473194%26panoid%3DkswtxjEoYDjggwfLwUM1tQ%26yaw%3D161.7888975646224!7i16384!8i8192!4m6!3m5!1s0x85ca57f4d2f178f5:0x9b0efa58fea2db2e!8m2!3d16.8658299!4d-99.8793499!16s%2Fg%2F1tcvjf5z?entry=ttu&g_ep=EgoyMDI2MDExMS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn">VER EN GOOGLE MAPS</a>
     </section>
 
     <section style="background-color: #2a2a2a; color: white;">
@@ -194,7 +223,7 @@
     <section style="background: linear-gradient(var(--color-fondo), white);">
         <h2>¿Nos acompañas a celebrar?</h2>
         <p>Es muy importante para nosotros contar con tu presencia.</p>
-        <p>Por favor, confirma tu asistencia antes del 15 de Enero de 2026.</p>
+        <p>Por favor, confirma tu asistencia antes del 25 de Enero de 2026.</p>
         
         <div class="confirmation-options">
             <label class="option-item">
@@ -236,7 +265,7 @@
                 }
             }
             let mensaje = (seleccion === "SI") 
-                ? "Estimados Marco y Ángeles, es un placer confirmar mi asistencia a su boda. ¡Allí estaré! Mi nombre es: " 
+                ? "Estimados Marco y Ángeles, es un placer confirmar mi asistencia a su boda. ¡Allí estaré! (Invitación para 2 personas). Mi nombre es: " 
                 : "Estimados Marco y Ángeles, muchas gracias por la invitación. Lamentablemente no podré asistir, pero les deseo lo mejor. Saludos de: ";
             
             window.open("https://wa.me/527444563528?text=" + encodeURIComponent(mensaje), "_blank");
